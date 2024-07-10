@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 10:12:02 by arabefam          #+#    #+#             */
-/*   Updated: 2024/07/10 09:42:05 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/07/10 09:53:42 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,5 @@ long	ft_atol(const char *str);
 void	error_exit(const char *error);
 int		is_inputs_valide(char **inputs);
 void	data_init(t_data *data, char **inputs);
+void	*safe_malloc(size_t bytes);
 #endif

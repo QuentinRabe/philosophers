@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 09:07:03 by arabefam          #+#    #+#             */
-/*   Updated: 2024/07/10 09:22:58 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/07/10 10:21:38 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ struct s_philo
 	int			is_satisfied;
 	long		times_eaten;
 	long		last_meal_time;
-	pthread_t	philo;
+	pthread_t	thread;
 	t_data		*data;
 };
 

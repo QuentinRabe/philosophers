@@ -6,11 +6,29 @@
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 09:38:22 by arabefam          #+#    #+#             */
-/*   Updated: 2024/07/10 09:41:53 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/07/10 10:20:58 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philo.h"
+
+static void	init_philo(t_data *data)
+{
+	int		i;
+	long	n_philo;
+	t_philo	*philo;
+
+	i = -1;
+	n_philo = data->n_philo;
+	philo = data->philos;
+	while (++i < n_philo)
+	{
+		philo[i].id = i + 1;
+		philo[i].is_satisfied = 0;
+		philo[i].times_eaten = 0;
+		philo[i].data = data;
+	}
+}
 
 void	data_init(t_data *data, char **inputs)
 {
@@ -22,4 +40,7 @@ void	data_init(t_data *data, char **inputs)
 		data->meals_limit = ft_atol(inputs[5]);
 	else
 		data->meals_limit = -1;
+	data->philos = safe_malloc(sizeof(t_philo) * data->n_philo);
+	data->forks = safe_malloc(sizeof(t_fork) * data->n_philo);
+	init_philo(data);
 }
