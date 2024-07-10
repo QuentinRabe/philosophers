@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo.h                                            :+:      :+:    :+:   */
+/*   data_init.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/08 10:12:02 by arabefam          #+#    #+#             */
-/*   Updated: 2024/07/10 09:42:05 by arabefam         ###   ########.fr       */
+/*   Created: 2024/07/10 09:38:22 by arabefam          #+#    #+#             */
+/*   Updated: 2024/07/10 09:41:53 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHILO_H
-# define PHILO_H
+#include "../../includes/philo.h"
 
-# include <string.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include <sys/time.h>
-# include <unistd.h>
-# include <pthread.h>
-# include <limits.h>
-# include "./type.h"
-
-long	ft_atol(const char *str);
-void	error_exit(const char *error);
-int		is_inputs_valide(char **inputs);
-void	data_init(t_data *data, char **inputs);
-#endif
+void	data_init(t_data *data, char **inputs)
+{
+	data->n_philo = ft_atol(inputs[1]);
+	data->time_die = ft_atol(inputs[2]);
+	data->time_eat = ft_atol(inputs[3]);
+	data->time_sleep = ft_atol(inputs[4]);
+	if (inputs[5])
+		data->meals_limit = ft_atol(inputs[5]);
+	else
+		data->meals_limit = -1;
+}

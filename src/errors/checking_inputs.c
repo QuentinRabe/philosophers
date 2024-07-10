@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo.h                                            :+:      :+:    :+:   */
+/*   checking_inputs.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/08 10:12:02 by arabefam          #+#    #+#             */
-/*   Updated: 2024/07/10 09:42:05 by arabefam         ###   ########.fr       */
+/*   Created: 2024/07/10 09:24:27 by arabefam          #+#    #+#             */
+/*   Updated: 2024/07/10 09:35:32 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHILO_H
-# define PHILO_H
+#include "../../includes/philo.h"
 
-# include <string.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include <sys/time.h>
-# include <unistd.h>
-# include <pthread.h>
-# include <limits.h>
-# include "./type.h"
+int	is_inputs_valide(char **inputs)
+{
+	int	i;
 
-long	ft_atol(const char *str);
-void	error_exit(const char *error);
-int		is_inputs_valide(char **inputs);
-void	data_init(t_data *data, char **inputs);
-#endif
+	i = 0;
+	while (inputs[++i])
+		ft_atol(inputs[i]);
+	return (1);
+}
